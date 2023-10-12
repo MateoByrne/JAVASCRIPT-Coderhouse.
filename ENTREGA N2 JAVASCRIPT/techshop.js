@@ -2,32 +2,6 @@
 
 const carrito = [];
 
-const airpods = {
-    nombre: "AirPods Pro 2",
-    precio: 300,
-    subtotal: 300,
-    cantidad: 1,
-};
-const magsafe = {
-    nombre: "Batería MagSafe",
-    precio: 50,
-    subtotal: 50,
-    cantidad: 1,
-};
-const adaptador = {
-    nombre: "Adaptador USB-C",
-    precio: 30,
-    subtotal: 30,
-    cantidad: 1,
-};
-
-
-carrito.push(airpods);
-
-carrito.push(magsafe);
-
-carrito.push(adaptador);
-
 
 function en_carrito(nombre_prompt) {
 
@@ -41,7 +15,7 @@ function buscar() {
     const array_resultados = carrito.filter((el) => el.nombre.toLowerCase().includes(palabra_a_buscar.toLowerCase()));
 
     console.log(array_resultados);
-}
+} 
 
 function agregar() {
 
@@ -49,7 +23,7 @@ function agregar() {
     const precio_prompt = prompt("Introducir el precio del producto/s: ");
 
 
-    const nuevo_producto = {
+    const nuevo_producto = { 
         nombre: nombre_prompt,
         precio: parseInt(precio_prompt),
         subtotal: parseInt(precio_prompt),
@@ -57,7 +31,7 @@ function agregar() {
     };
 
     const producto_encontrado = en_carrito(nombre_prompt);
-
+     
     if (producto_encontrado) {
         producto_encontrado.cantidad++;
         producto_encontrado.precio = parseInt(precio_prompt);
@@ -66,7 +40,7 @@ function agregar() {
     } else {
         carrito.push(nuevo_producto);
     }
-
+ 
     alert("El producto " + nombre_prompt + " se agregó al carrito.");
     lista();
 }
