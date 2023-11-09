@@ -1,0 +1,25 @@
+[
+{
+   "id": 1, 
+   "nombre":  "AirPods Pro 2", 
+   "precio": 200,
+   "categoria": "Electronico",
+   "imagen": "airpodspro2img.webp"
+},
+
+{
+    "id": 2, 
+    "nombre":  "Battery Pack", 
+    "precio": 100,
+    "categoria": "Electronico",
+    "imagen": "batterpackimg.jpeg"
+ },
+
+ {
+    "id": 2, 
+    "nombre":  "MagSafe inalámbrico", 
+    "precio": 100,
+    "categoria": "Electronico",
+    "imagen": "inalambricoimg.jpeg"
+ }
+]

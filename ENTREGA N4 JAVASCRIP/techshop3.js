@@ -15,14 +15,13 @@ class Producto {
 class BaseDeDatos {
     constructor() {
         this.productos = [];
-        this.agregar_registros(1, "AirPods Pro 2", 200, "Electronico", "airpodspro2img.webp");
-        this.agregar_registros(2, "Battery Pack", 100, "Electronico", "batterpackimg.jpeg");
-        this.agregar_registros(3, "MagSafe inalámbrico", 100, "Electronico", "inalambricoimg.jpeg");
+        this.cargar_registros();
     }
 
-    agregar_registros(id, nombre, precio, categoria, imagen) {
-        const producto = new Producto(id, nombre, precio, categoria, imagen);
-        this.productos.push(producto);
+    async cargar_registros(){
+        const Resul = await fetch("./json/productos.json");
+        this.productos = await Resul.json();
+        cargar_productos(this.productos);
     }
 
     traer_registros() {
@@ -179,6 +178,7 @@ function cargar_productos(productos) {
                 className: "info",
                 gravity: "top",
                 position: "center",
+
                 style: {
                   background: "linear-gradient(to right, #00b09b, #96c93d)",
                 }
